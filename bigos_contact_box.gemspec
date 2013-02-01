@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = BigosContactBox::VERSION
   s.authors     = ["Artur Kremens"]
   s.email       = ["kremenso@o2.pl"]
-  s.homepage    = "weban.com.pl"
+  s.homepage    = "http://www.weban.com.pl"
   s.summary     = "Contact Form box for bigos cms system."
   s.description = "Contact box module"
 
