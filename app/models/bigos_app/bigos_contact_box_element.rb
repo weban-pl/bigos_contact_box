@@ -6,7 +6,7 @@ module BigosApp
     end
 
     def render
-      "bigos_contact_box/item"
+      "bigos_contact_box/module/item"
     end
 
     def admin_render
