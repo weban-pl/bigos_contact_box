@@ -20,6 +20,4 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails"
   s.add_dependency "bigos_settings"
 
-  s.add_development_dependency "pg"
-
 end
