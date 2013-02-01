@@ -1,0 +1,28 @@
+module BigosContactBox
+  module Controllers
+    module Helpers
+      extend ActiveSupport::Concern
+
+      def bigos_contact_box_widget(authentication = :plain, enable_starttls_auto = true )
+
+        ActionMailer::Base.smtp_settings = {
+            :address              => BigosContactBox.address,
+            :port                 => BigosContactBox.port,
+            :domain               => BigosContactBox.domain,
+            :user_name            => BigosContactBox.user_name,
+            :password             => BigosContactBox.password,
+            :authentication       => authentication,
+            :enable_starttls_auto => enable_starttls_auto,
+        }
+        ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+
+        @message = BigosContactBox::Message.new
+        render :partial=>"bigos_contact_box/module/widget", :locals=>{:message => @message}
+      end
+
+
+
+
+    end
+  end
+end

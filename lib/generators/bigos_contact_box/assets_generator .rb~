@@ -1,0 +1,11 @@
+module BigosContactBox
+  module Generators
+
+    class AssetsGenerator < Rails::Generators::Base
+      desc "Include javascripts."
+      insert_into_file "app/assets/javascripts/application.js", :after => %r{//= require +['"]?jquery['"]?} do
+		"\n//= require 'my_engine'\n\n"
+	  end
+    end
+  end
+end

@@ -1,0 +1,32 @@
+<div class="form">
+<div id="message_status"></div>
+<%= form_for @message, :url => bigos_contact_box.messages_path do |form| %>
+    <fieldset class="fields">
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </div>
+      <div class="field">
+        <%= form.label :subject %>
+        <%= form.text_field :subject %>
+      </div>
+
+      <div class="field">
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+      </div>
+    </fieldset>
+
+    <fieldset class="actions">
+      <%= form.submit "Send", id: "bigos_contact_form_submit" %>
+    </fieldset>
+<% end %>
+</div>
+<%= hidden_field_tag :marker_icon, asset_path( BigosContactBox::Setting["#{BigosContactBox.name}.marker_icon_src"]) unless  BigosContactBox::Setting["#{BigosContactBox.name}.marker_icon_src"].blank? %>
+<%= hidden_field_tag :map_zoom,  BigosContactBox::Setting["#{BigosContactBox.name}.map_zoom"] unless  BigosContactBox::Setting["#{BigosContactBox.name}.map_zoom"].blank? %>
+<%= hidden_field_tag :latitude,  BigosContactBox::Setting["#{BigosContactBox.name}.latitude"] %>
+<%= hidden_field_tag :longitude, BigosContactBox::Setting["#{BigosContactBox.name}.longitude"] %>
+<%= hidden_field_tag :location_name, BigosContactBox::Setting["#{BigosContactBox.name}.location_name"] %>
+<%= hidden_field_tag :invalid_fields_error,  BigosContactBox::Setting["#{BigosContactBox.name}.invalid_fields_error"] %>
+<div id="contact-box-map-canvas" style="width:400px; height: 400px">
+</div>
