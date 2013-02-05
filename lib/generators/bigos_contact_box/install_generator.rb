@@ -25,14 +25,9 @@ module BigosContactBox
         Setting["#{BigosContactBox.name}.domain"] = "yourdomain.dev"
         Setting["#{BigosContactBox.name}.user_name"] = "from@yourdomain.dev"
         Setting["#{BigosContactBox.name}.password"] = "Super-Secure-Password"
-        Setting["#{BigosContactBox.name}.latitude"] = ""
-        Setting["#{BigosContactBox.name}.longitude"] = ""
         Setting["#{BigosContactBox.name}.invalid_fields_error"] = "Invalid Fields"
         Setting["#{BigosContactBox.name}.success_message"] = "Message sent successfully"
-        Setting["#{BigosContactBox.name}.location_name"] = "Location name"
         Setting["#{BigosContactBox.name}.redirect_path"] = ""
-        Setting["#{BigosContactBox.name}.map_zoom"] = ""
-        Setting["#{BigosContactBox.name}.marker_icon_src"] = ""
         im = BigosApp::InstalledModule.find_or_create_by_name(BigosContactBox.name)
         im.page_element =  BigosApp::BigosContactBoxElement.name
         im.save
