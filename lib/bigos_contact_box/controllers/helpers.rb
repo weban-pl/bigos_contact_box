@@ -5,21 +5,21 @@ module BigosContactBox
 
       def bigos_contact_box_widget ()
 
-        if Setting.use_widget_mailer_settings
+        if Setting["GS.use_widget_mailer_settings"]
           ActionMailer::Base.delivery_method = :smtp
           ActionMailer::Base.raise_delivery_errors = true
           ActionMailer::Base.perform_deliveries = true
           ActionMailer::Base.default :charset => "utf-8"
-          ActionMailer::Base.default_url_options = { :host => Setting["#{BigosContactBox.name}.domain"] }
+          ActionMailer::Base.default_url_options = { :host => Setting["GS.mailer_domain"] }
 
           ActionMailer::Base.smtp_settings = {
-            :address              => Setting["#{BigosContactBox.name}.address_name"].to_s,
-            :port                 => Setting["#{BigosContactBox.name}.port"].to_i,
-            :user_name            => Setting["#{BigosContactBox.name}.user_name"].to_s,
-            :password             => Setting["#{BigosContactBox.name}.password"].to_s,
+            :address              => Setting["GS.mailer_address_name"].to_s,
+            :port                 => Setting["GS.mailer_port"].to_i,
+            :user_name            => Setting["GS.mailer_user_name"].to_s,
+            :password             => Setting["GS.mailer_password"].to_s,
             :authentication       => "plain",
             :enable_starttls_auto => true,
-            :domain               => Setting["#{BigosContactBox.name}.domain"].to_s
+            :domain               => Setting["GS.mailer_domain"].to_s
           }
         end
         @message = BigosContactBox::Message.new

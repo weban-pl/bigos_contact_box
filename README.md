@@ -1,5 +1,5 @@
 ## BigosContactBox
-Widget with contact form and google map.
+Widget with contact form.
 
 ## Installation
 
@@ -18,13 +18,6 @@ After you install BigosContactBox and add it to your Gemfile, you need to run th
 ```console
 rails generate bigos_contact_box:install
 ```
-
-You have to add this line in layout, where widget will be displaying:
-
-```ruby
-  <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=true" %>
-```
-
 
 If You want displaying message after send email You have to add this line in view after redirect:
 

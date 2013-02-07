@@ -5,9 +5,10 @@ module BigosContactBox
       @message = Message.new(params[:message])
       if @message.valid?
         ContactMailer.custom_message(@message).deliver
-        redirect_to(Setting.redirect_path.blank? ? main_app.root_path: Setting.redirect_path, :notice => Setting.success_message)
+        redirect_to(Setting["#{BigosContactBox.name}.redirect_path"].blank? ? main_app.root_path: Setting["#{BigosContactBox.name}.redirect_path"],
+                    :notice => Setting["#{BigosContactBox.name}.success_message"])
       else
-        flash.now.alert = Setting.invalid_fields_error
+        flash.now.alert = Setting["#{BigosContactBox.name}.invalid_fields_error"]
         render partial: "bigos_contact_box/module/widget"
       end
     end
