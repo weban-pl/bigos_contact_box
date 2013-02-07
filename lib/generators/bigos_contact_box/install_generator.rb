@@ -28,7 +28,7 @@ module BigosContactBox
         Setting["#{BigosContactBox.name}.recipient"] = "Your email address" if Setting.find_by_var("#{BigosContactBox.name}.recipient").blank?
         Setting["#{BigosContactBox.name}.invalid_fields_error"] = "Invalid Fields" if Setting.find_by_var("#{BigosContactBox.name}.invalid_fields_error").blank?
         Setting["#{BigosContactBox.name}.success_message"] = "Message sent successfully" if Setting.find_by_var("#{BigosContactBox.name}.success_message").blank?
-        Setting["#{BigosContactBox.name}.redirect_path"] = "#{BigosContactBox.name}.redirect_path" if Setting.find_by_var("").blank?
+        Setting["#{BigosContactBox.name}.redirect_path"] = "" if Setting.find_by_var("#{BigosContactBox.name}.redirect_path").blank?
         im = BigosApp::InstalledModule.find_or_create_by_name(BigosContactBox.name)
         im.page_element =  BigosApp::BigosContactBoxElement.name
         im.save
