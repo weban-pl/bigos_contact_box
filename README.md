@@ -8,7 +8,6 @@ BigosContactBox works with Rails 3.1 onwards. You can add it to your Gemfile wit
 ```ruby
 gem "bigos_contact_box", :git=>"git://github.com/weban/bigos_contact_box.git"
 
-
 ```
 Gems "jquery-rails" and "bigos_settings" are required
 
