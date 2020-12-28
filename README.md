@@ -11,6 +11,7 @@ gem "bigos_contact_box", :git=>"git://github.com/weban/bigos_contact_box.git"
 ```
 Gems "jquery-rails" and "bigos_settings" are required
 
+
 Run the bundle command to install it.
 
 After you install BigosContactBox and add it to your Gemfile, you need to run the generator:
